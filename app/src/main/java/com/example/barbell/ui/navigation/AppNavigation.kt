@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.barbell.ui.screens.home.HomeScreen
+import com.example.barbell.ui.screens.log_workout.LogWorkoutScreen
 
 @Composable
 fun AppNavigation() {
@@ -11,21 +13,19 @@ fun AppNavigation() {
 
     NavHost(navController = navController, startDestination = "home") {
         composable("home") {
-            // We will build HomeScreen next!
-            // HomeScreen(
-            //     onNavigateToLog = { exerciseId ->
-            //         navController.navigate("log_workout/$exerciseId")
-            //     }
-            // )
+             HomeScreen(
+                 onNavigateToLog = { exerciseId ->
+                     navController.navigate("log_workout/$exerciseId")
+                 }
+             )
         }
         composable("log_workout/{exerciseId}") { backStackEntry ->
             val exerciseId = backStackEntry.arguments?.getString("exerciseId")
-            // We will build LogWorkoutScreen later!
-            // LogWorkoutScreen(
-            //     exerciseId = exerciseId,
-            //     onNavigateBack = { navController.popBackStack() },
-            //     onNavigateToCamera = { navController.navigate("camera") }
-            // )
+             LogWorkoutScreen(
+                 exerciseId = exerciseId,
+                 onNavigateBack = { navController.popBackStack() },
+                 onNavigateToCamera = { navController.navigate("camera") }
+             )
         }
         composable("camera") {
             // Camera screen goes here

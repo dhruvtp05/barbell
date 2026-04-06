@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -45,9 +47,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    var room_version = "2.6.1"
+    var room_version = "2.7.0"
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
     var nav_version = "2.7.7"
     implementation("androidx.navigation:navigation-compose:${nav_version}")
     val composeBom = platform("androidx.compose:compose-bom:2024.04.01")
