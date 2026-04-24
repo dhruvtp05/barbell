@@ -1,82 +1,108 @@
-# Barbell
+# 🏋️ Barbell
 
-Barbell is a Kotlin Android workout tracker focused on logging strength progress per exercise.
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white)
+![Room](https://img.shields.io/badge/Room-FF6F00?style=flat-square&logo=android&logoColor=white)
 
-## Features
+> **Barbell** is a focused Android workout tracker built for lifters who care about progress. Log your sets, track your weights, and watch your progressive overload numbers climb — all organized cleanly by muscle group.
 
-- Create exercises and assign fixed body area categories:
-  - Chest, Biceps, Shoulders, Triceps, Legs, Abs, Back, Forearms
-- Log workouts with:
-  - weight
-  - reps
-  - sets
-  - optional equipment photo
-- View per-exercise progression timeline
-- Track progressive overload percentage (first logged weight vs latest logged weight)
-- Clean grouped home screen by muscle area
+---
 
-## Tech Stack
+## ✨ Features
 
-- Kotlin + Jetpack Compose (Material 3)
-- Room database
-- Navigation Compose
-- Coil (image loading)
-- Kotlin Multiplatform shared module (`shared`) for shared domain logic:
-  - muscle groups
-  - progressive overload calculator
+* 💪 **Exercise Library** Create custom exercises and assign them to fixed muscle group categories: Chest, Biceps, Shoulders, Triceps, Legs, Abs, Back, or Forearms.
+* 📋 **Detailed Workout Logging** Record weight, reps, sets, and an optional equipment photo for each session.
+* 📈 **Progression Timeline** View a per-exercise history chart to visualize your improvement over time.
+* 🔢 **Progressive Overload Tracker** Instantly see your percentage gain from your first logged weight to your latest — the core metric for strength progress.
+* 🏠 **Clean Home Screen** All exercises are grouped by muscle area for quick navigation to what you're training today.
 
-## Requirements
+---
 
-- Windows/macOS/Linux
-- JDK 21 recommended for Gradle daemon/toolchain
-- Android SDK + platform tools (`adb`) for device install/testing
+## 🚀 Quick Start
 
-## Run Locally (No Android Studio Required)
+No Android Studio required. Run from the project root:
 
-From project root:
-
-```powershell
+```bash
+# Build the debug APK
 .\gradlew.bat assembleDebug
+
+# Install to a connected device or emulator
 .\gradlew.bat installDebug
+
+# Launch the app
 adb shell am start -n com.example.barbell/.MainActivity
 ```
 
-If `adb` is not found, install Android SDK platform-tools and add it to your PATH.
+> If `adb` is not found, install [Android SDK Platform Tools](https://developer.android.com/tools/releases/platform-tools) and add it to your `PATH`.
 
-## Test
+---
 
-```powershell
+## 🧪 Testing
+
+```bash
+# Run unit tests
 .\gradlew.bat testDebugUnitTest
+
+# Build debug variant
 .\gradlew.bat assembleDebug
 ```
 
-## Project Structure
+---
 
-- `app/` - Android application
-- `shared/` - Kotlin Multiplatform shared domain logic
+## 💻 Tech Stack
 
-## Notes on iPhone Support
+* **Language:** Kotlin
+* **UI:** Jetpack Compose (Material 3)
+* **Database:** Room
+* **Navigation:** Navigation Compose
+* **Image Loading:** Coil
+* **Shared Logic:** Kotlin Multiplatform (`shared` module) — houses domain logic for muscle groups and the progressive overload calculator
 
-This repo now includes a KMP `shared` module for cross-platform domain logic, but the full iOS app target/UI is not yet implemented in this repository.
+---
 
-To ship on iPhone, you still need:
+## 📁 Project Structure
 
-- a macOS machine + Xcode
-- iOS app target (SwiftUI or Compose Multiplatform UI)
-- wiring that iOS app to consume the `shared` module
+```
+barbell/
+├── app/        # Android application module
+└── shared/     # Kotlin Multiplatform shared domain logic
+```
 
-## Play Store Release (High Level)
+---
 
-1. Create release keystore
-2. Configure release signing
-3. Build AAB:
+## 📱 iPhone Support
 
-```powershell
+The `shared` KMP module is in place for cross-platform domain logic, but a full iOS UI is not yet implemented.
+
+To ship on iPhone you'd still need:
+* A macOS machine with Xcode
+* An iOS app target (SwiftUI or Compose Multiplatform)
+* Wiring to consume the `shared` module
+
+---
+
+## 🚢 Play Store Release
+
+1. Create a release keystore
+2. Configure release signing in your Gradle build files
+3. Build the Android App Bundle:
+
+```bash
 .\gradlew.bat bundleRelease
 ```
 
-4. Upload AAB to Google Play Console
+4. Upload the `.aab` to [Google Play Console](https://play.google.com/console)
 
-## License
+---
 
-No license file is currently defined in this repository.
+## ⚙️ Requirements
+
+* JDK 21 (recommended for Gradle toolchain)
+* Android SDK + Platform Tools
+
+---
+
+## 📄 License
+
+No license is currently defined for this repository.
