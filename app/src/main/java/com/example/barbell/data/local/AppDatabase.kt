@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.barbell.data.model.Exercise
 import com.example.barbell.data.model.WorkoutLog
 
-@Database(entities = [Exercise::class, WorkoutLog::class], version = 1, exportSchema = false)
+@Database(entities = [Exercise::class, WorkoutLog::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun barbellDao(): BarbellDao
@@ -22,7 +22,11 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "barbell_database"
-                ).build()
+                )
+                    // During active development, schema can change often.
+                    // This avoids startup crashes from stale local DB schemas.
+                    .fallbackToDestructiveMigration(dropAllTables = true)
+                    .build()
                 INSTANCE = instance
                 instance
             }

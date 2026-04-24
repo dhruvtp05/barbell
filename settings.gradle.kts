@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Barbell"
 include(":app")
+include(":shared")

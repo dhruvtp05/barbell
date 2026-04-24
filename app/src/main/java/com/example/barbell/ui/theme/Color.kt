@@ -2,10 +2,16 @@ package com.example.barbell.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+val BrandDark = Color(0xFF141821)
+val BrandSurfaceDark = Color(0xFF1D2430)
+val BrandPrimaryDark = Color(0xFF8BB9FF)
+val BrandSecondaryDark = Color(0xFF8FD8C6)
+val BrandAccentDark = Color(0xFFFFB26B)
+val BrandTextDark = Color(0xFFE2E8F1)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+val BrandLight = Color(0xFFF4F7FC)
+val BrandSurfaceLight = Color(0xFFFFFFFF)
+val BrandPrimaryLight = Color(0xFF1E5AB6)
+val BrandSecondaryLight = Color(0xFF0E8A70)
+val BrandAccentLight = Color(0xFFE37D1F)
+val BrandTextLight = Color(0xFF1B2430)
