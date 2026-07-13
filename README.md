@@ -9,17 +9,17 @@
 
 ---
 
-## ✨ Features
+##  Features
 
-* 💪 **Exercise Library** Create custom exercises and assign them to fixed muscle group categories: Chest, Biceps, Shoulders, Triceps, Legs, Abs, Back, or Forearms.
-* 📋 **Detailed Workout Logging** Record weight, reps, sets, and an optional equipment photo for each session.
-* 📈 **Progression Timeline** View a per-exercise history chart to visualize your improvement over time.
-* 🔢 **Progressive Overload Tracker** Instantly see your percentage gain from your first logged weight to your latest — the core metric for strength progress.
-* 🏠 **Clean Home Screen** All exercises are grouped by muscle area for quick navigation to what you're training today.
+*  **Exercise Library** Create custom exercises and assign them to fixed muscle group categories: Chest, Biceps, Shoulders, Triceps, Legs, Abs, Back, or Forearms.
+*  **Detailed Workout Logging** Record weight, reps, sets, and an optional equipment photo for each session.
+*  **Progression Timeline** View a per-exercise history chart to visualize your improvement over time.
+*  **Progressive Overload Tracker** Instantly see your percentage gain from your first logged weight to your latest — the core metric for strength progress.
+*  **Clean Home Screen** All exercises are grouped by muscle area for quick navigation to what you're training today.
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 No Android Studio required. Run from the project root:
 
@@ -38,7 +38,7 @@ adb shell am start -n com.example.barbell/.MainActivity
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 # Run unit tests
@@ -50,7 +50,7 @@ adb shell am start -n com.example.barbell/.MainActivity
 
 ---
 
-## 💻 Tech Stack
+##  Tech Stack
 
 * **Language:** Kotlin
 * **UI:** Jetpack Compose (Material 3)
@@ -61,7 +61,7 @@ adb shell am start -n com.example.barbell/.MainActivity
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 barbell/
@@ -71,7 +71,7 @@ barbell/
 
 ---
 
-## 📱 iPhone Support
+##  iPhone Support
 
 The `shared` KMP module is in place for cross-platform domain logic, but a full iOS UI is not yet implemented.
 
@@ -82,7 +82,7 @@ To ship on iPhone you'd still need:
 
 ---
 
-## 🚢 Play Store Release
+##  Play Store Release
 
 1. Create a release keystore
 2. Configure release signing in your Gradle build files
@@ -96,7 +96,7 @@ To ship on iPhone you'd still need:
 
 ---
 
-## ⚙️ Requirements
+##  Requirements
 
 * JDK 21 (recommended for Gradle toolchain)
 * Android SDK + Platform Tools
